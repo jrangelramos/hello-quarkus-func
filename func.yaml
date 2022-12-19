@@ -1,15 +1,15 @@
 specVersion: 0.34.0
 name: hello-quarkus-func
 runtime: quarkus
-registry: ""
-image: ""
+registry: image-registry.openshift-image-registry.svc:5000/test-jeff
+image: image-registry.openshift-image-registry.svc:5000/test-jeff/hello-quarkus-func:latest
 imageDigest: ""
 created: 2022-12-19T09:35:24.362454929-03:00
 invocation:
   format: http
 build:
   buildpacks: []
-  builder: ""
+  builder: s2i
   buildEnvs:
   - name: BP_NATIVE_IMAGE
     value: "false"
@@ -26,7 +26,7 @@ run:
   volumes: []
   envs: []
 deploy:
-  namespace: ""
+  namespace: test-jeff
   annotations: {}
   options: {}
   labels: []
